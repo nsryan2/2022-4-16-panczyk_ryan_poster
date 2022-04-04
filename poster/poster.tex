@@ -86,7 +86,7 @@
         \raisebox{\dimexpr-\height+\baselineskip}[0pt][0pt]
           {\includegraphics[height=2.5\baselineskip]{UIUC_Logo}}% Left logo
       }\hfill
-      \makebox[0pt]{Title}%
+      \makebox[0pt]{Illinois ESOMs \& the potential for proactive nuclear activism}%
       \hfill\makebox[0pt][r]{%
         \raisebox{\dimexpr-\height+\baselineskip}[0pt][0pt]
           {\includegraphics[height=3.3\baselineskip]{arfc_atom}}% Right logo
@@ -99,8 +99,8 @@
   {\vspace{1cm}}
   } % Poster title
 
-\author{\textbf{Primary Author}, Other Authors}
-\institute{University of Illinios at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
+\author{Nataly Panczyk, Nathan Ryan}
+\institute{University of Illinois at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -167,28 +167,31 @@ These goals will be achieved by:
 %	Programs
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Program 1}
-Description
+\begin{block}{Theory}
+The structure of Temoa is intentionally flexible; creating an energy system based on user inputted technologies that generate commodities that fill a certain demand \cite{decarolis}. The Illinois energy model referenced in this project had an end demand of electricity, with technologies such as nuclear power plants, solar farms, wind farms, coal plants, natural gas, etc. Temoa’s objective function minimizes the total system cost of the Illinois energy system for Dotson et al.’s model and imposes a variety of constraints on the system, such as land use, carbon emissions, and specified renewable energy and energy deployment speeds \cite{dotson}. The objective function is to minimize:
+	\begin{equation} \label{eq:objective}
+	  \sum_{g=1}^{G} = \int_{t=2020}^{t=2050}c_g(t)
+	\end{equation} where \newline
+	\begin{itemize}
+	  \item $G$ = number of generation technologies
+	  \item $x_g(t)$ = capacity of technology g in year t [$TW$]
+	  \item $c_g(t)$ = total cost of technology g in year t [$\frac{\$}{TW}$]
+	  \item $l_g(t)$ = loan cost of technology g in year t [$\frac{\$}{TW}$]
+	  \item $f_g(t)$ = fixed cost of technology g in year t [$\frac{\$}{TW}$]
+	  \item $v_g(t)$ = variable cost of technology g in year t [$\frac{\$}{TW-year}$]
+	  \item $cf_g(t)$ = capacity factor of technology g in year t [\%]
+	\end{itemize} \cite{dotson}.
+	
+	By creating a model and forecasting the total system costs and carbon emissions of a variety of energy scenarios, policymakers can make quantitative data-based decisions on how to move forwards in an economically and environmentally sustainable way. By varying the contributions nuclear energy has to such a modeled grid, this work highlights the often underappreciated role nuclear plays in producing large quantities of carbon-free electricity across the state.
 
-\begin{figure}
-	\label{fig:figure_label_ex1}
-	\includegraphics[width=0.9\linewidth]{graphic_name1}
-	\caption{Caption1 Reference \cite{call_tag_article}}
-\end{figure}
+% \begin{figure}
+% 	\label{fig:figure_label_ex1}
+% 	\includegraphics[width=0.9\linewidth]{graphic_name1}
+% 	\caption{Caption1 Reference \cite{call_tag_article}}
+% \end{figure}
 
 \end{block}
 
-\begin{block}{Program 2}
-
-Description
- 
-\begin{itemize}
-	\item{Item 1}
-	\item{Item 2}
-	\item{Item 3}
-\end{itemize}
-
-\end{block}
 
 %----------------------------------------------------------------------------------------
 
@@ -204,66 +207,99 @@ Description
 %	MODELS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Models}
+\begin{block}{Results \& Analysis}
 \vspace{0.7em}
-\textbf{First Model}
+\textbf{Costs}
 
-Description
+% The main objective function of the Temoa model of the Illinois energy grid minimizes total system costs, which is a high priority for policymakers and taxpayers alike. The costs of each energy technology comes in three parts:
 
-Example table 
-\begin{table}[]
-	\label{tab:table_label}
-	\caption{Table caption with citation \cite{call_tag_article}}
-	\begin{tabular}{|l|l|l|l|}
-	\hline
-	Header1 &  Header2 [Units]  &  Header3 [Units]  &  Header3 [Units]   \\ \hline
-	Item 1     & 100 & 2.5  & 2.5\\ \hline
-	Iten 2      & 100 & 2.5 & 2.5\\ \hline
-	Item 3     & 100 & 2.5  & 2.5\\ \hline
-	\end{tabular}
-\end{table}
+% \begin{enumerate}
+%   \item Investment costs: a one-time payment of the technology. \textit{I.e. capital cost.}
+%   \item Fixed costs: an annual payment for the technology, regardless of how much it operates. \textit{I.e. operations and maintenance costs.}
+%   \item Variable costs: an annual payment for the technology that varies directly with the amount it operates and produces. \textit{E.g. raw material costs.}
+% \end{enumerate}
 
-In the waste repository model, the user can define the variables: 
-	\begin{itemize}
-		\item Variable
-		\item Variable
-		\item Variable 
-		\item Variable 
-		\item Variable
-	\end{itemize}
+When these plants continued to operate, they did so with relatively low fixed and variable costs, since the majority of the expense of nuclear power is paid upfront via the investment cost. Without GHG restrictions imposed on the model, the cost of using other sources wasn’t significant. With restrictions imposed, the model showed increased costs in the land-use required by renewable technologies.
 
-\vspace{0.7em}
-\textbf{Second Model}
 
-Description 
-
-\vspace{0.7em}
-\textbf{Third Model}
-
-Description with an example of a figure reference
-
-Figure \ref{fig:figure_label_ex1} does stuff 
-
-\begin{figure}
-	\label{fig:figure_label_ex2}
-	\includegraphics[width=1\linewidth]{graphic_name2}
-	\caption{Caption2 Reference \cite{call_tag_article}}
+\begin{figure}[ht] % replace 't' with 'b' to force it to be on the bottom
+  \centering
+  \includegraphics[scale=0.7]{land-use.png}
+  \caption{Percentage of land use required for each scenario in the Dotson et al. model \cite{dotson}.}
+  \label{fig:landuse}
 \end{figure}
 
-Description 
+Figure \ref{fig:landuse} shows the massive increase in Illinois' land area that would be required to produce adequate levels of clean energy in the zero nuclear situation. Further, the land most suitable for such renewable implementation (specifically, solar-PV), happens to coincide with the regions used for 15\% and 14\% of corn and soybean production, respectively \cite{schleusener}.
 
-Equations
-\begin{align*}
-	y = x
-\end{align*}
-Description
-\begin{align*}
-	y = x
-\end{align*}
-Description
-\begin{align*}
-	y = x
-\end{align*}
+
+% Example table 
+% \begin{table}[]
+% 	\label{tab:table_label}
+% 	\caption{Table caption with citation \cite{call_tag_article}}
+% 	\begin{tabular}{|l|l|l|l|}
+% 	\hline
+% 	Header1 &  Header2 [Units]  &  Header3 [Units]  &  Header3 [Units]   \\ \hline
+% 	Item 1     & 100 & 2.5  & 2.5\\ \hline
+% 	Iten 2      & 100 & 2.5 & 2.5\\ \hline
+% 	Item 3     & 100 & 2.5  & 2.5\\ \hline
+% 	\end{tabular}
+% \end{table}
+
+% In the waste repository model, the user can define the variables: 
+% 	\begin{itemize}
+% 		\item Variable
+% 		\item Variable
+% 		\item Variable 
+% 		\item Variable 
+% 		\item Variable
+% 	\end{itemize}
+
+\vspace{0.7em}
+\textbf{Emissions}
+
+The Clean Air Task Force report \cite{health} on the health impacts of these closures predicted that the decline in air quality would lead to 500 to 1,100 premature deaths—--using the EPA’s CO-Benefits Risk Assessment Health Impacts Screening and Mapping Tool (COBRA)---,costing a little over half of a billion dollars per year. 
+\begin{figure}[ht]
+  \centering
+  \includegraphics[scale=0.7]{co2eq_all_comparison.png}
+  \caption{CO2 equivalent of lifecycle emissions for each scenario over time in the Dotson et al. model \cite{dotson}.}
+  \label{fig:co2eq_time}
+\end{figure}
+
+Illinois recently joined the US Climate Alliance, committing the state to reducing their emissions to at least 26$\%$ below 2005 levels (among other promises) to track progress and accelerate technological development \cite{climate}.
+% \begin{figure}[ht]
+%   \centering
+%   \includegraphics[scale=0.7]{co2eq_all_comparison_barplot.png}
+%   \caption{Cumulative lifecycle CO2 equivalent emissions for each scenario in the Dotson et al. model \cite{dotson}.}
+%   \label{fig:co2eq_cu}
+% \end{figure} 
+
+% \vspace{0.7em}
+% \textbf{Third Model}
+
+% Description with an example of a figure reference
+
+% Figure \ref{fig:figure_label_ex1} does stuff 
+
+% \begin{figure}
+% 	\label{fig:figure_label_ex2}
+% 	\includegraphics[width=1\linewidth]{graphic_name2}
+% 	\caption{Caption2 Reference \cite{call_tag_article}}
+% \end{figure}
+
+% Description 
+
+% Equations
+% \begin{align*}
+% 	y = x
+% \end{align*}
+% Description
+% \begin{align*}
+% 	y = x
+% \end{align*}
+% Description
+% \begin{align*}
+% 	y = x
+% \end{align*}
 
 \end{block}
 
@@ -276,7 +312,7 @@ Description
 
 \begin{column}{\onecolwid} % The third column
 
-\begin{block}{Results}
+\begin{block}{Conclusion}
 \textbf{Something}
 
 Description/analysis
@@ -298,9 +334,7 @@ Description
 \setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 \setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 \begin{alertblock}{Future Work }
-\begin{itemize}
-		\item Future work
-\end{itemize}
+	Future iterations could extend this work to take into account the effects of the recent commitments by the state to supply all of the electricity to Illionians from renewable sources by 2050.
 
 \end{alertblock}
 
@@ -313,7 +347,7 @@ Description
 
 \begin{block}{Acknowledgements}
 	
-	Text specific to your funding, and other acknowledgements you'd like to make
+	The authors of this report would like to thank all of their co-authors on the “Economic and Carbon Impacts of Potential Illinois Nuclear Plant Closures” report upon which this research is based.
 	
 \end{block}
 
@@ -327,8 +361,8 @@ Description
 \begin{alertblock}{Contact Information}
 	\setbeamercolor{block title}{fg=norange,bg=white} % Change the block title color
 	\begin{itemize}
-		\item Email: \href{mailto:netid@illinois.edu}{netid@illinois.edu}
-		\item Phone: \href{tel:15555555555}{+1 555 555 5555}
+		\item Nataly: \href{mailto:panczyk2@illinois.edu}{panczyk2@illinois.edu}
+		\item Nathan: \href{mailto:nsryan2@illinois.edu}{nsryan2@illinois.edu}
 	\end{itemize}
 % These specific elements are optional, but you should have some method for people to contact you.	
 	
