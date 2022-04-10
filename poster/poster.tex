@@ -86,7 +86,7 @@
         \raisebox{\dimexpr-\height+\baselineskip}[0pt][0pt]
           {\includegraphics[height=2.5\baselineskip]{UIUC_Logo}}% Left logo
       }\hfill
-      \makebox[0pt]{Illinois ESOMs \& the potential for proactive nuclear activism}%
+      \makebox[0pt]{Illinois Energy System Models}%
       \hfill\makebox[0pt][r]{%
         \raisebox{\dimexpr-\height+\baselineskip}[0pt][0pt]
           {\includegraphics[height=3.3\baselineskip]{arfc_atom}}% Right logo
@@ -94,8 +94,8 @@
     }%
   }
   % To make a title with two lines, remove the "%" from the following two lines 
-  %{First line of title}
-  %{Second line of title}
+  {Illinois Energy System Optimization Models}
+  {\& the Potential for Proactive Nuclear Activism}
   {\vspace{1cm}}
   } % Poster title
 
@@ -125,8 +125,14 @@
 
 \begin{block}{Introduction}
 
-	In 2020, the primary energy source for Illinoi's electricity generation was the state's nuclear fleet \cite{eia}. In 2021, two fo the six facilities that comprise this fleet, Byron and Dresden Generating Stations, were at high risk of closure \cite{larson}. In an effort to demonstrate the economic and climate effects of these closures and Illinois' energy usage overall, Dotson et al. created a predictive model of Ilinois' energy grid using North Carolina State University's Tools for Economic Modeling and Optimization Analysis (Temoa) software. The model sought to minimize two major factors, $CO_2$ and other greenhouse gas (GHG) emissions and overall system costs \cite{dotson}. The results fo the model and a preliminary interpretation of the results in relation to state energy policy proposals were compiled by Dotson et al. in the 2021 report, ``Economic and Carbon Impacts of Potential Illinois Nuclear Plant Closures'' \cite{dotson}. Dotson et al.'s findings will serve as a data-based underpinning of the need to demonstrate the importance of clean and safe nuclear energy outside of a time-sensitive closure preventing rhetoric. Ultimately, this project uses the recent history of Illinois' energy policy and predicative energy grid models to promote proactive nuclear activism on a global scale.
+	In 2020, the primary energy source for Illinois' electricity generation was the state's nuclear fleet \cite{eia}. In 2021, two fo the six facilities that comprise this fleet, Byron and Dresden Generating Stations, were at high risk of closure \cite{larson}. 
+	\vspace{0.7em}
+
+	In an effort to demonstrate the economic and climate effects of these closures and Illinois' energy usage overall, Dotson et al. created a predictive model of Illinois' energy grid using North Carolina State University's Tools for Economic Modeling and Optimization Analysis (Temoa) software. The model sought to minimize two major factors, $CO_2$ and other greenhouse gas (GHG) emissions and overall system costs \cite{dotson}. The results fo the model and a preliminary interpretation of the results in relation to state energy policy proposals were compiled by Dotson et al. in the 2021 report, ``Economic and Carbon Impacts of Potential Illinois Nuclear Plant Closures'' \cite{dotson}. 
+	\vspace{0.7em}	
 	
+	Dotson et al.'s findings will serve as a data-based underpinning of the need to demonstrate the importance of clean and safe nuclear energy outside of a time-sensitive closure preventing rhetoric. Ultimately, this project uses the recent history of Illinois' energy policy and predicative energy grid models to promote proactive nuclear activism on a global scale.
+	\vspace{0.7em}
 	
 	
 	\end{block}
@@ -140,7 +146,7 @@
 	\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 	\begin{alertblock}{Objectives}
 	\begin{itemize}
-			\item Review several modeled Illinois energy-grid scenarios, including three variatiosn of each business-as-usual (BAU), constrained carbon (CC), expensive nuclear (XN), and zero advanced nuclear (ZN), with a range of renewable energy growth rates to reach a zero carbon target.
+			\item Review several modeled Illinois energy-grid scenarios, including three variations of each business-as-usual (BAU), constrained carbon (CC), expensive nuclear (XN), and zero advanced nuclear (ZN), with a range of renewable energy growth rates to reach a zero carbon target.
 		\item Summarize computational models in a policy-oriented manner to demonstrate the difference in potential impact between \textit{proactive} and \textit{reactive} nuclear activism.
 	\end{itemize}
 	
@@ -151,7 +157,13 @@
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Theory}
-The structure of Temoa is intentionally flexible; creating an energy system based on user inputted technologies that generate commodities that fill a certain demand \cite{decarolis}. The Illinois energy model referenced in this project had an end demand of electricity, with technologies such as nuclear power plants, solar farms, wind farms, coal plants, natural gas, etc. Temoa’s objective function minimizes the total system cost of the Illinois energy system for Dotson et al.’s model and imposes a variety of constraints on the system, such as land use, carbon emissions, and specified renewable energy and energy deployment speeds \cite{dotson}. The objective function is to minimize:
+The structure of Temoa is an intentionally flexible linear programming tool; creating an energy system based on user inputted technologies that generate commodities that fill a certain demand \cite{decarolis}. 
+\vspace{0.7em}
+
+The Illinois energy model referenced in this project had an end demand of electricity, with technologies such as nuclear power plants, solar farms, wind farms, coal plants, natural gas, etc. 
+\vspace{0.7em}
+
+Temoa’s objective function minimizes the total system cost of the Illinois energy system for Dotson et al.’s model and imposes a variety of constraints on the system, such as land use, carbon emissions, and specified renewable energy and energy deployment speeds \cite{dotson}. The objective function is to minimize:
 	\begin{equation} \label{eq:objective}
 	  \sum_{g=1}^{G} = \int_{t=2020}^{t=2050}c_g(t)
 	\end{equation} where \newline
@@ -159,13 +171,19 @@ The structure of Temoa is intentionally flexible; creating an energy system base
 	  \item $G$ = number of generation technologies
 	  \item $x_g(t)$ = capacity of technology g in year t [$TW$]
 	  \item $c_g(t)$ = total cost of technology g in year t [$\frac{\$}{TW}$]
-	  \item $l_g(t)$ = loan cost of technology g in year t [$\frac{\$}{TW}$]
-	  \item $f_g(t)$ = fixed cost of technology g in year t [$\frac{\$}{TW}$]
-	  \item $v_g(t)$ = variable cost of technology g in year t [$\frac{\$}{TW-year}$]
-	  \item $cf_g(t)$ = capacity factor of technology g in year t [\%]
 	\end{itemize} \cite{dotson}.
-	
-	By creating a model and forecasting the total system costs and carbon emissions of a variety of energy scenarios, policymakers can make quantitative data-based decisions on how to move forwards in an economically and environmentally sustainable way. By varying the contributions nuclear energy has to such a modeled grid, this work highlights the often underappreciated role nuclear plays in producing large quantities of carbon-free electricity across the state.
+
+	\vspace{0.7em}
+	The main objective function of the Temoa model of the Illinois energy grid minimizes total system costs, which is a high priority for policymakers and taxpayers alike. The costs of each energy technology comes in three parts:
+
+\begin{enumerate}
+  \item Investment costs: a one-time payment of the technology.
+  \item Fixed costs: an annual payment for the technology.
+  \item Variable costs: an annual payment for the technology that varies directly with the amount it operates and produces.
+\end{enumerate}
+\vspace{0.7em}
+
+By creating a model and forecasting the total system costs and carbon emissions of a variety of energy scenarios, policymakers can make quantitative data-based decisions on how to move forwards in an economically and environmentally sustainable way. By varying the contributions nuclear energy has to such a modeled grid, this work highlights the often under-appreciated role nuclear plays in producing large quantities of carbon-free electricity across the state.
 
 % \begin{figure}
 % 	\label{fig:figure_label_ex1}
@@ -192,7 +210,29 @@ The structure of Temoa is intentionally flexible; creating an energy system base
 
 \begin{block}{Results \& Analysis}
 \vspace{0.7em}
+\textbf{Scenarios}
+\vspace{0.7em}
+
+There are four scenarios for deployment with three cases: 1) premature closure of Byron and Dresden; 2) scheduled closure; 3) license extension outside 2050. 
+\begin{table}[]
+	\label{tab:scenarios}
+	\caption{Nuclear deployment scenarios, and their model hyperparameters \cite{dotson}}
+	\begin{tabular}{lccc}
+	\hline
+	ID  &  Name  &  Zero Carbon  &  Renewable \\  
+	& & Target [yr] & Growth Rate\\ \hline
+	BAU & Business as Usual     & none & limited \\ 
+	CC  & Constrained Carbon    & 2030 & optimistic\\ 
+	XN  & Expensive Nuclear     & 2030 & optimistic \\
+	ZN  & Zero Advanced Nuclear & 2030 & unlimited \\ \hline
+	\end{tabular}
+\end{table}
+The limited growth rate is based off of current developments in renewables, whereas the optimistic rate is defined by the bold proposals in the Illinois Clean Energy Jobs Act (allowing utility solar to grow to 10 GWe by 2030, wind turbine deployments to grow to 13.8 GWe by 2030, and capping a steady increase in residential solar at 75\% \cite{gagnon_rooftop_2016}) 
+
+\vspace{0.7em}
 \textbf{Costs}
+\vspace{0.7em}
+
 
 % The main objective function of the Temoa model of the Illinois energy grid minimizes total system costs, which is a high priority for policymakers and taxpayers alike. The costs of each energy technology comes in three parts:
 
@@ -207,40 +247,18 @@ When these plants continued to operate, they did so with relatively low fixed an
 
 \begin{figure}[ht] % replace 't' with 'b' to force it to be on the bottom
   \centering
-  \includegraphics[scale=0.7]{land-use.png}
+  \includegraphics[scale=2.7]{land-use.png}
   \caption{Percentage of land use required for each scenario in the Dotson et al. model \cite{dotson}.}
   \label{fig:landuse}
 \end{figure}
 
 Figure \ref{fig:landuse} shows the massive increase in Illinois' land area that would be required to produce adequate levels of clean energy in the zero nuclear situation. Further, the land most suitable for such renewable implementation (specifically, solar-PV), happens to coincide with the regions used for 15\% and 14\% of corn and soybean production, respectively \cite{schleusener}.
 
-
-% Example table 
-% \begin{table}[]
-% 	\label{tab:table_label}
-% 	\caption{Table caption with citation \cite{call_tag_article}}
-% 	\begin{tabular}{|l|l|l|l|}
-% 	\hline
-% 	Header1 &  Header2 [Units]  &  Header3 [Units]  &  Header3 [Units]   \\ \hline
-% 	Item 1     & 100 & 2.5  & 2.5\\ \hline
-% 	Iten 2      & 100 & 2.5 & 2.5\\ \hline
-% 	Item 3     & 100 & 2.5  & 2.5\\ \hline
-% 	\end{tabular}
-% \end{table}
-
-% In the waste repository model, the user can define the variables: 
-% 	\begin{itemize}
-% 		\item Variable
-% 		\item Variable
-% 		\item Variable 
-% 		\item Variable 
-% 		\item Variable
-% 	\end{itemize}
-
 \vspace{0.7em}
 \textbf{Emissions}
+\vspace{0.7em}
 
-The Clean Air Task Force report \cite{health} on the health impacts of these closures predicted that the decline in air quality would lead to 500 to 1,100 premature deaths—--using the EPA’s CO-Benefits Risk Assessment Health Impacts Screening and Mapping Tool (COBRA)---,costing a little over half of a billion dollars per year. 
+The Clean Air Task Force report \cite{health} on the health impacts of these closures predicted that the decline in air quality would lead to 500 to 1,100 premature deaths using the EPA’s CO-Benefits Risk Assessment Health Impacts Screening and Mapping Tool (COBRA)---costing a little over half of a billion dollars per year. 
 \begin{figure}[ht]
   \centering
   \includegraphics[scale=0.7]{co2eq_all_comparison.png}
@@ -249,40 +267,6 @@ The Clean Air Task Force report \cite{health} on the health impacts of these clo
 \end{figure}
 
 Illinois recently joined the US Climate Alliance, committing the state to reducing their emissions to at least 26$\%$ below 2005 levels (among other promises) to track progress and accelerate technological development \cite{climate}.
-% \begin{figure}[ht]
-%   \centering
-%   \includegraphics[scale=0.7]{co2eq_all_comparison_barplot.png}
-%   \caption{Cumulative lifecycle CO2 equivalent emissions for each scenario in the Dotson et al. model \cite{dotson}.}
-%   \label{fig:co2eq_cu}
-% \end{figure} 
-
-% \vspace{0.7em}
-% \textbf{Third Model}
-
-% Description with an example of a figure reference
-
-% Figure \ref{fig:figure_label_ex1} does stuff 
-
-% \begin{figure}
-% 	\label{fig:figure_label_ex2}
-% 	\includegraphics[width=1\linewidth]{graphic_name2}
-% 	\caption{Caption2 Reference \cite{call_tag_article}}
-% \end{figure}
-
-% Description 
-
-% Equations
-% \begin{align*}
-% 	y = x
-% \end{align*}
-% Description
-% \begin{align*}
-% 	y = x
-% \end{align*}
-% Description
-% \begin{align*}
-% 	y = x
-% \end{align*}
 
 \end{block}
 
@@ -296,7 +280,8 @@ Illinois recently joined the US Climate Alliance, committing the state to reduci
 \begin{column}{\onecolwid} % The third column
 
 \begin{block}{Conclusion}
-\textbf{Something}
+\textbf{Illinois}
+\vspace{0.7em}
 
 Description/analysis
  
@@ -311,13 +296,20 @@ Description
 	\caption{Caption3 Reference \cite{call_tag_article}}
 \end{figure}
 
+\vspace{0.7em}
+\textbf{Broad}
+\vspace{0.7em}
+
+
+
 \end{block}
 
 % This section creates an box with an orange border and a white background
 \setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 \setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
 \begin{alertblock}{Future Work }
-	Future iterations could extend this work to take into account the effects of the recent commitments by the state to supply all of the electricity to Illionians from renewable sources by 2050.
+	Future iterations could extend this work to take into account the effects of the recent commitments by the state to supply all of the electricity to Illinoisans from renewable sources by 2050.
+	This project could also be extended to other states like Michigan, which is facing a similar premature closure scenario with their Palisades facility---it was licensed through 2031.
 
 \end{alertblock}
 
@@ -353,7 +345,7 @@ Description
 
 \begin{block}{References}
 
-	{\footnotesize\bibliographystyle{abbrv} 
+	{\footnotesize\bibliographystyle{ieeetr} 
 	\bibliography{poster}}
 \end{block}
 
