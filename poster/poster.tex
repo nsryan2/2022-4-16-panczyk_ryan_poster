@@ -165,7 +165,7 @@ The Illinois energy model referenced in this project had an end demand of electr
 
 Temoa’s objective function minimizes the total system cost of the Illinois energy system for Dotson et al.’s model and imposes a variety of constraints on the system, such as land use, carbon emissions, and specified renewable energy and energy deployment speeds \cite{dotson}. The objective function is to minimize:
 	\begin{equation} \label{eq:objective}
-	  \sum_{g=1}^{G} = \int_{t=2020}^{t=2050}c_g(t)
+	  \sum_{g=1}^{G} \int_{t=2020}^{t=2050}c_g(t)
 	\end{equation} where \newline
 	\begin{itemize}
 	  \item $G$ = number of generation technologies
@@ -284,20 +284,26 @@ Illinois recently joined the US Climate Alliance, committing the state to reduci
 
 The key takeaways of this research are less focused on the specific outcomes and projections of ESOMs but rather on the pertinence that they exist. Neuroscience indicates that despite our best efforts, humans have a particularly challenging time imagining ``future developments that deviate significantly from current and historic trends'' \cite{psych}. The scenario we now face, a critical need to completely re-envision our energy generation schemes in order to avoid the effects of climate change, has a major risk of failure due to this psychological impairment. ESOM research, like the Illinois energy model described here, provide an antidote to this barrier by eliminating the need for human brains to ``imagine'' the new scenario. Instead, tools like Temoa create the new, prospective scenarios for us.
 
-\begin{figure}[h!]
-	\label{fig:energy_mix_2050}
-	\includegraphics[width=0.9\linewidth]{energy_mix_2050.jpg}
-	\caption{3: 12 energy generation combinations for Illinois in 2050 \cite{dotson}}
-\end{figure}
+\vspace{0.7em}
 
-For the example of Illinois, we can draw conclusions on relative expenses for transition scenarios or emissions related costs for a variety of potential energy grid outlooks. Figure 3 shows 12 possible combinations of energy generation sources for Illinois in 2050 shown as GW capacity for each source. Clearly, the results shown here are not expected to be completely accurate to a future scenario, but they provide policymakers and citizens alike the capacity to envision a solution that may otherwise seem impractical, even impossible. Using quantitative, predictive, optimization models like the one demonstrated in this work highlight the potential of nuclear among a variety of sources and underline the need to portray this potential to the general public and community leaders.
+For the example of Illinois, we can draw conclusions on relative expenses for transition scenarios or emissions related costs for a variety of potential energy grid outlooks.  Using quantitative, predictive, optimization models like the one demonstrated in this work highlight the potential of nuclear among a variety of sources and underline the need to portray this potential to the general public and community leaders.
 
 \end{block}
+
+\begin{alertblock}{Takeaways}
+	\setbeamercolor{block title}{fg=norange,bg=white} % Change the block title color
+	\begin{itemize}
+		\item Quantitative models highlight the statewide potential for nuclear energy.
+		\item ESOMs create a credible baseline to inform activism.
+		\item Factors like land use and carbon emissions are compelling takeaways from ESOMs in states like Illinois.
+	\end{itemize}
+\end{alertblock}
+
 
 % This section creates an box with an orange border and a white background
 \setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
 \setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
-\begin{alertblock}{Future Work }
+\begin{alertblock}{Future Work}
 	Future iterations could extend this work to take into account the effects of the recent commitments by the state to supply all of the electricity to Illinoisans from renewable sources by 2050.
 	This project could also be extended to other states like Michigan, which is facing a similar premature closure scenario with their Palisades facility---it was licensed through 2031.
 
@@ -312,7 +318,7 @@ For the example of Illinois, we can draw conclusions on relative expenses for tr
 
 \begin{block}{Acknowledgements}
 
-	The authors of this report would like to thank all of their co-authors on the “Economic and Carbon Impacts of Potential Illinois Nuclear Plant Closures” report upon which this research is based.
+	The authors of this report would like to thank all of their co-authors on the “Economic and Carbon Impacts of Potential Illinois Nuclear Plant Closures” report upon which this research is based, and the continued support of Dr. Madicken Munk and Samuel Dotson in this extension.
 
 \end{block}
 
